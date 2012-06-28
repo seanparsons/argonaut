@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Argonaut : JSON library" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Argonaut</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ephox/argonaut">View on GitHub</a>
+
+          <h1 id="project_title">Argonaut</h1>
+          <h2 id="project_tagline">JSON library</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ephox/argonaut/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ephox/argonaut/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Argonaut</h1>
+
+<h3>What is Argonaut?</h3>
+
+<p>Argonaut is a JSON library built using Scala. It provides functionality to specify how to convert to and from JSON for an arbitrary Scala object. It relies on the Scala parser libraries (<code>util.parsing.combinator</code>) to read an arbitrary string into a JSON data type, which is known to be slow. Argonaut is licenced under BSD3 (see <code>etc/LICENCE</code>).</p>
+
+<p>The JSON data type also implements a large combinator library in an effort to make it easy to use, however, much of this library would be better implemented by exploiting partial lenses and a zipper.</p>
+
+<p>Argonaut is intended for simple applications that use specification-compliant JSON. Argonaut is released under a <a href="http://www.opensource.org/licenses/BSD-3-Clause">BSD3 open-source licence</a>.</p>
+
+<h3>Features</h3>
+
+<ul>
+<li>Lenses and partial lenses for product and sum types, in particular for viewing and updating values of the <code>Json</code> sum type.</li>
+<li>A zipper (<code>com.ephox.argonaut.Cursor</code>) for traversing and updating a <code>Json</code> data structure.</li>
+<li>A traversal data structure (<code>com.ephox.argonaut.Shift</code>) that tracks its history of visited positions with an underlying cursor.</li>
+<li>A pretty-printer for outputting JSON values.</li>
+<li>A codec for taking values of arbitrary type to and from JSON values.</li>
+</ul><h3>SBT Settings</h3>
+
+<p>To use argonaut, add the following repositories to your build:</p>
+
+<pre><code>override lazy val settings =
+  super.settings ++
+    Seq(resolvers := Seq(
+      "mth.io snapshots"  at "http://repo.mth.io/snapshots"
+    , "mth.io releases"  at "http://repo.mth.io/releases"
+    , "snapshots" at "http://oss.sonatype.org/content/repositories/snapshots"
+    , "releases"  at "http://oss.sonatype.org/content/repositories/releases"
+    ))
+</code></pre>
+
+<p>Then add argonaut as a dependency:</p>
+
+<pre><code>"com.ephox" %% "argonaut" % "4.0" withSources
+</code></pre>
+
+<h3>Future Improvements</h3>
+
+<ul>
+<li>Use a more appropriate parser library (not Scala parsers) to improve performance and usability.</li>
+</ul><p><strong>Copyright 2012 Ephox Pty Ltd</strong></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Argonaut maintained by <a href="https://github.com/ephox">ephox</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-31861332-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
